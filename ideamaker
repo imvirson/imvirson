@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesin Pembuat Ide</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+    color:#00ff99;
+}
+
+.card{
+    background:#222;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+select,button{
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    background:#00cc66;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00aa55;
+}
+
+#hasil{
+    margin-top:25px;
+    padding:20px;
+    background:#333;
+    border-radius:10px;
+    min-height:150px;
+    line-height:1.8;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🧠 Mesin Pembuat Ide</h1>
+
+<div class="card">
+
+<label>Pilih Jenis Ide</label>
+
+<select id="kategori">
+
+<option value="gambar">Ide Gambar</option>
+
+<option value="cerita">Ide Cerita</option>
+
+<option value="video">Ide Video</option>
+
+<option value="lagu">Ide Lagu</option>
+
+<option value="produk">Ide Produk</option>
+
+</select>
+
+<button onclick="buatIde()">Buat Ide</button>
+
+<div id="hasil">
+
+Tekan tombol untuk membuat ide...
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const data={
+
+gambar:[
+
+"Seekor naga robot yang sedang menolong anak kecil di tengah hujan."
+
+,"Raja menghormati seorang pengemis tua karena kebijaksanaannya."
+
+,"Kucing mekanik penjaga perpustakaan rahasia."
+
+,"Harimau kristal yang menjaga gunung emas."
+
+,"Burung phoenix dari kumpulan jam rusak."
+
+],
+
+cerita:[
+
+"Paijo menemukan pintu menuju masa depan, tetapi setiap langkah membuat masa lalunya menghilang."
+
+,"Siputri menerima surat dari dirinya sendiri 30 tahun kemudian."
+
+,"Sebuah desa yang seluruh penduduknya kehilangan bayangan."
+
+,"Robot tua yang diam-diam menjadi guru kehidupan."
+
+,"Jam yang bisa menghentikan kebohongan."
+
+],
+
+video:[
+
+"Bagaimana jika semut berukuran dinosaurus?"
+
+,"Eksperimen sosial menghormati pengemis."
+
+,"7 Ide bisnis yang belum pernah dipikirkan orang."
+
+,"Apa yang terjadi jika gravitasi mati selama 10 detik?"
+
+,"Cerita AI yang membuat penonton menangis."
+
+],
+
+lagu:[
+
+"Lagu tentang robot yang belajar mencintai."
+
+,"Lagu perjuangan seorang ayah."
+
+,"Pop romantis bertema hujan dan waktu."
+
+,"Rock tentang mimpi yang tidak pernah menyerah."
+
+,"Lagu akustik mengenai rasa syukur."
+
+],
+
+produk:[
+
+"Payung yang mengubah air hujan menjadi listrik."
+
+,"Sepatu yang menghasilkan energi saat berjalan."
+
+,"Botol minum yang memberi tahu kondisi kesehatan."
+
+,"Kaos dengan tinta yang berubah sesuai suasana hati."
+
+,"Meja belajar pintar dengan AI."
+
+]
+
+};
+
+function acak(arr){
+
+return arr[Math.floor(Math.random()*arr.length)];
+
+}
+
+function buatIde(){
+
+let kategori=document.getElementById("kategori").value;
+
+document.getElementById("hasil").innerHTML="<h2>💡 Ide Baru</h2><p>"+acak(data[kategori])+"</p>";
+
+}
+
+</script>
+
+</body>
+</html>
